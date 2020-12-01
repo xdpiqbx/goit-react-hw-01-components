@@ -4,7 +4,6 @@ import s from './Statistics.module.css';
 
 export default function Statistics({ title, statisticalDada }) {
   return (
-    // title - не обязателен, и если он не передан, не должна рендериться разметка заголовка <h2>.
     <section className={s.statistics}>
       {title ? <h2 className={s.title}>{title}</h2> : null}
       <ul className={s.statList}>
@@ -36,7 +35,11 @@ function randomColor() {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  statisticalDada: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    }),
+  ),
 };

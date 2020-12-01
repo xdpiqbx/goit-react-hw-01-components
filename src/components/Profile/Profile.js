@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 
 import s from './Profile.module.css';
 
-export default function Profile({ userDada }) {
-  const { name, tag, location, avatar, stats } = userDada;
+export default function Profile({ name, tag, location, avatar, stats }) {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -42,5 +41,5 @@ Profile.propTypes = {
   tag: PropTypes.string,
   location: PropTypes.string,
   avatar: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.number),
+  stats: PropTypes.objectOf(PropTypes.number),
 };
